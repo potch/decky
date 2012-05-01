@@ -48,6 +48,7 @@
                 subSlides.css({'display': null});
             } else {
                 n = n < 1 ? 1 : (n > numSlides ? numSlides : n);
+                if (n == current) return;
                 window.location.hash = "#"+n;
                 µ('[data-subslide]', currentSlide).css({'display': 'none'});
                 current = n;

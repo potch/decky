@@ -23,35 +23,44 @@ h1, h2, h3 {
     text-align: center;
     margin: 2% 0;
 }
-h1 { font-size: 200%; }
+h1 { font-size: 250%; }
 h2 { font-size: 150%; }
 h3 { font-size: 120%; }
 
-section li,
-section table {
+h1:only-child {
+    margin: auto;
+}
+
+section li {
     margin: 1% 0;
+}
+section table {
     border-collapse: collapse;
+    width: 100%;
 }
 table th,
 table td {
     padding: 1% 2%;
+    text-align: left;
 }
-table th {
-    text-align: right;
+table thead tr {
+    background: rgba(0,0,0,.2);
 }
-table tr:nth-child(2n+1) {
+table tr:nth-child(2n) {
     background: rgba(0,0,0,.1);
 }
-.col-right {
-    width: 45%;
-    float: right;
-}
-.col-left {
-    width: 45%;
+section .col {
+    width: 50%;
     float: left;
+    margin-top: 0;
 }
 img {
     vertical-align: middle;
+}
+.hero {
+    height: 80%;
+    display: block;
+    margin: 0 auto;
 }
 header, footer {
 	width: 100%;
