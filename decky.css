@@ -10,6 +10,7 @@ body, html {
 body {
     font-size: 100%;
     overflow: hidden;
+    background: #fff;
 }
 section {
     width: 100%;
@@ -18,6 +19,29 @@ section {
     padding: 5%;
     font-size: 120%;
     position: relative;
+    counter-increment: slides;
+    background: #fff;
+}
+section:after {
+    content: counter(slides);
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+    font-size: 50%;
+    color: rgba(0,0,0,.5);
+}
+body.list {
+    overflow: inherit;
+}
+body.list section {
+    border: 1px solid black;
+    margin: 2%;
+    width: 46%;
+    height: 50%;
+    float: left;
+}
+body.list [data-subslide] {
+    visibility: visible !important;
 }
 h1, h2, h3 {
     text-align: center;
@@ -28,7 +52,7 @@ h2 { font-size: 150%; }
 h3 { font-size: 120%; }
 
 h1:only-child {
-    margin: auto;
+    margin-top: 10%;
 }
 
 section li {
@@ -50,15 +74,16 @@ table tr:nth-child(2n) {
     background: rgba(0,0,0,.1);
 }
 section .col {
-    width: 50%;
+    width: 49%;
     float: left;
-    margin-top: 0;
+    margin: 0 0.5%;
 }
 img {
     vertical-align: middle;
 }
 .hero {
-    height: 80%;
+    max-height: 80%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
@@ -75,9 +100,4 @@ footer {
 	bottom: 0;
 	text-align: center;
 	z-index: 1;
-}
-#slidenum {
-	float: right;
-	color: rgba(0,0,0,.5);
-	margin: 1%;
 }
